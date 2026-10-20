@@ -1,0 +1,356 @@
+
+:root {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #f5f7ff;
+    background: #0b1227;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    --panel: #151f3b;
+    --border: rgba(255, 255, 255, 0.12);
+    --muted: #a9b5d0;
+    --accent: #8bb7ff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at top left, #253b69 0%, transparent 45%),
+        linear-gradient(145deg, #0b1227, #111b36 65%, #10152a);
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    width: min(100% - 32px, 1000px);
+    margin: 0 auto;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+}
+
+.brand {
+    color: #ffffff;
+    font-size: 1.35rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.unit-button {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 14px;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.hero {
+    padding: 55px 0 36px;
+    text-align: center;
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+
+.subtitle {
+    margin: 18px 0 28px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.search-form {
+    display: flex;
+    width: min(100%, 590px);
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.search-form input {
+    min-width: 0;
+    flex: 1;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    outline: none;
+    padding: 16px;
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.search-form input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(139, 183, 255, 0.15);
+}
+
+.search-form input::placeholder {
+    color: #a9b5d0;
+}
+
+.search-form button {
+    border: 0;
+    border-radius: 14px;
+    padding: 0 24px;
+    color: #0b1227;
+    background: #a8caff;
+    font-weight: 800;
+}
+
+.search-form button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+.status {
+    min-height: 24px;
+    margin: 18px 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.status.error {
+    color: #ffb7bd;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.weather {
+    margin: 12px 0 55px;
+}
+
+.location-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 10px 0 22px;
+}
+
+.location-heading h2,
+.forecast-section h2 {
+    margin: 0;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.muted,
+.feels {
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.weather-icon {
+    font-size: clamp(3rem, 9vw, 5rem);
+}
+
+.current-card {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 26px;
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background: rgba(21, 31, 59, 0.88);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.condition {
+    margin: 0 0 10px;
+    color: var(--muted);
+}
+
+.temperature {
+    font-size: clamp(3.8rem, 9vw, 5.5rem);
+    font-weight: 750;
+    letter-spacing: -3px;
+    line-height: 1.1;
+}
+
+#temperatureUnit {
+    font-size: 2rem;
+    vertical-align: top;
+    letter-spacing: 0;
+}
+
+.feels {
+    margin-top: 16px;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 15px 12px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.detail-icon {
+    font-size: 1.4rem;
+}
+
+.detail p {
+    margin: 0 0 6px;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.detail strong {
+    font-size: 0.95rem;
+    overflow-wrap: anywhere;
+}
+
+.forecast-section {
+    margin-top: 34px;
+}
+
+.forecast-section h2 {
+    margin-bottom: 18px;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.forecast-day {
+    padding: 18px 10px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    text-align: center;
+    background: rgba(21, 31, 59, 0.8);
+}
+
+.forecast-day .day-name {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.forecast-day .day-icon {
+    margin: 12px 0;
+    font-size: 1.9rem;
+}
+
+.forecast-day .day-condition {
+    min-height: 32px;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.forecast-day .day-temperatures {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 750;
+}
+
+.forecast-day .low {
+    color: var(--muted);
+}
+
+footer {
+    padding: 22px 0 30px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+footer a {
+    color: var(--accent);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+    .hero {
+        padding-top: 36px;
+    }
+
+    .current-card {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .weather-details {
+        gap: 9px;
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .forecast-day:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 400px) {
+    .app {
+        width: min(100% - 22px, 1000px);
+    }
+
+    .search-form {
+        gap: 7px;
+    }
+
+    .search-form input {
+        padding: 13px 10px;
+        font-size: 0.9rem;
+    }
+
+    .search-form button {
+        padding: 0 14px;
+    }
+
+    .current-card {
+        padding: 16px;
+    }
+
+    .detail {
+        gap: 8px;
+        padding: 12px 8px;
+    }
+}
