@@ -1,0 +1,9 @@
+{
+  "name": "SkyCast Weather Information App",
+  "short_name": "SkyCast",
+  "description": "A weather information app built using Python and Flask.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#101827",
+  "theme_color": "#101827"
+}
